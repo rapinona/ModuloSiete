@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/drawable/circulo.xml" value="0.1635" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/drawable/ctr_bg.xml" value="0.206" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/drawable/layout_bg.xml" value="0.1635" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/drawable/myrect.xml" value="0.165" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/drawable/redonda.xml" value="0.1635" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_collapsing_toolbar_layout.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_constraint.xml" value="0.1984375" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_main.xml" value="0.19537037037037036" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_main_sonido.xml" value="0.18802083333333333" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_main_video.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/activity_nested_scroll_view.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/bar_main.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/card_view_holder.xml" value="0.20208333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/circulo.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/ctr_bg.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/header_main.xml" value="0.2388888888888889" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/layout_bg.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/list_item_sonido.xml" value="0.20104166666666667" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/list_item_video.xml" value="0.175" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/redonda.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/menu/activity_main_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
