@@ -55,6 +55,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.sonido->{
                 startActivity(Intent(this,MainActivitySonido::class.java))
             }
+            R.id.recycler_view->{
+                startActivity(Intent(this,RecyclerView::class.java))
+            }
 
         }
 
