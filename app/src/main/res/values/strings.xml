@@ -1,7 +1,10 @@
 <resources>
+    <string name="file_preferencia">dgtic.unam.autentifiacion.PREFERENCE_FILE_KEY</string>
     <string name="app_name">ModuloSiete</string>
     <string name="dispositivos_moviles_8">Dispositivos Moviles 8</string>
-    <string name="constraint_layout">ConstraintLayout</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="streaming">Streaming</string>
+    <string name="mp3_player">Mp3 Player</string>
     <string name="titulo_barra">Modulo 7 de Android</string>
     <string name="logo_unam">Logo UNAM</string>
     <string name="abrir">Abrir</string>
@@ -71,9 +74,23 @@
     <string name="logo_compra">logo compra</string>
     <string name="collapsingtoolbarlayout">Collapsingtoolbarlayout</string>
     <string name="imagen_pelicula">Imagen Pelicula</string>
-    <string name="videoActivity">Video Activity</string>
     <string name="canciones_mp3">Canciones MP3</string>
-    <string name="sonidoActivity">Sonido Activity</string>
-    <string name="RecyclerViewActivity">Recycler View Activity</string>
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="btn_login">Inicia sesión</string>
+    <string name="btn_login_alt">¿Ya tienes una cuenta? Inicia sesión</string>
+    <string name="btn_signup_alt">¿No tienes una cuenta? Crea una</string>
+    <string name="btn_signup">Crear cuenta</string>
+    <string name="view_title_login">Inicia Sesión</string>
+    <string name="view_title_signup">Crear cuenta</string>
+    <string name="input_email">Ingresa tu email</string>
+    <string name="input_password">Ingresa tu contraseña</string>
+    <string name="input_repeatPassword">Repite tu contraseña</string>
+    <string name="ht_email">Ejemplo: user@mail.com</string>
+    <string name="ht_password">La contraseña debe estar conformada por al menos 6 carácteres alfanuméricos (A-Z, 1-9)</string>
+    <string name="ht_repeatpassword">Por cuestiones de seguridad, las contraseñas deben ser iguales</string>
+    <string name="input_repeatpassword">Repite la contraseña</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="videoActivity">Video</string>
+    <string name="sonidoActivity">Sonido</string>
+    <string name="RecyclerViewActivity">Recycler</string>
 </resources>
