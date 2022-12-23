@@ -115,51 +115,17 @@
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/til_repeatpassword"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:passwordToggleEnabled="true"
-        android:layout_width="0dp"
-        android:layout_height="110dp"
-        android:drawablePadding="12dp"
-        android:ems="50"
-        android:hint="@string/input_repeatpassword"
-        android:paddingTop="10dp"
-        android:textSize="14sp"
-        android:inputType="textPassword"
-        android:state_checked="true"
-        app:endIconDrawable="@drawable/ic_selector"
-        app:helperText="@string/ht_repeatpassword"
-        app:boxBackgroundMode="outline"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
-        app:layout_constraintStart_toStartOf="@+id/gl_left"
-        app:layout_constraintEnd_toStartOf="@+id/gl_right"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintTop_toBottomOf="@+id/til_password">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiet_repeatpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_lock"
-            android:drawablePadding="12dp"
-            android:inputType="textPassword"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
     <Button
         android:id="@+id/btn_singup"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
         android:onClick="click"
+        android:text="@string/btn_signup"
+        app:cornerRadius="20sp"
         app:layout_constraintEnd_toStartOf="@+id/gl_right"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/til_repeatpassword"
-        android:text="@string/btn_signup" />
+        app:layout_constraintTop_toBottomOf="@+id/til_password" />
 
     <Button
         android:id="@+id/btn_login_alt"
@@ -167,8 +133,9 @@
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
         android:onClick="click"
+        android:text="@string/btn_login_alt"
+        app:cornerRadius="20sp"
         app:layout_constraintEnd_toStartOf="@+id/gl_right"
         app:layout_constraintStart_toStartOf="@+id/gl_left"
-        app:layout_constraintTop_toBottomOf="@+id/btn_singup"
-        android:text="@string/btn_login_alt"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_singup" />
 </androidx.constraintlayout.widget.ConstraintLayout>

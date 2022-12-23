@@ -57,34 +57,11 @@ class SignupFragment : Fragment(R.layout.fragment_signup) {
 
         val email = binding.tietEmail.text.toString()
         val pass = binding.tietPassword.text.toString()
-        val confPass = binding.tietRepeatpassword.text.toString()
         val message : String?
-        val typeResult = verifyAuth(email, pass, confPass)
 
         // Envio, comprobacion de datos ingresados correctamente y creacion de cuenta
-        if (typeResult.equals("SUCCESS")) {
-            if (confirmPass(pass, confPass)) {
-                createAccount(email, pass)
-            }
-            else {
-                message = "Las contraseñas no coinciden, por favor verifique e ingrese de nuevo."
-                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-            }
-        }
-        else {
-            message = "Algunos campos se encuentran vacios, por favor ingrese todos los datos."
-            Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
-        }
-    }
 
-    private fun verifyAuth(email: String?, pass: String?, confPass: String?) : String {
-        if (email?.isEmpty() == true || pass?.isEmpty() == true || confPass?.isEmpty() == true)
-            return "FAIL_EMPTY"
-        return "SUCCESS"
-    }
-
-    private fun confirmPass(pass: String, confPass: String) : Boolean {
-        return pass.equals(confPass)
+        createAccount(email, pass)
     }
 
     private fun createAccount(email: String, pass: String) {
