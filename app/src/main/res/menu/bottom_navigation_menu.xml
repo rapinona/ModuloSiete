@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nueva_caminata"
+        android:icon="@drawable/ic_baseline_add_24"
+        android:title="Nueva" />
+    <item
+        android:id="@+id/mis_caminatas"
+        android:icon="@drawable/ic_baseline_directions_walk_24"
+        android:title="Caminatas" />
+    <item
+        android:id="@+id/nuevo_formulario"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Formularios" />
+</menu>

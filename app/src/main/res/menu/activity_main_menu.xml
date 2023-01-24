@@ -5,34 +5,10 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/subititulo_uno"
-            android:title="Material Design">
-            <menu>
-                <item
-                    android:id="@+id/contraint_layout"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/constraint_layout" />
-                <item
-                    android:id="@+id/nestedscrollview"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/nestedscrollview" />
-                <item
-                    android:id="@+id/collapsing"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/collapsingtoolbarlayout" />
-                <item
-                    android:id="@+id/video"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/videoActivity" />
-                <item
-                    android:id="@+id/sonido"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/sonidoActivity" />
-                <item
-                    android:id="@+id/recycler_view"
-                    android:icon="@drawable/ic_baseline_description_24"
-                    android:title="@string/RecyclerViewActivity" />
-            </menu>
-        </item>
+            android:id="@+id/myProfile"
+            android:title="@string/MyProfile" />
+        <item
+            android:id="@+id/logout"
+            android:title="@string/Logout" />
     </group>
 </menu>

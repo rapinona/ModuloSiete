@@ -93,4 +93,37 @@
     <string name="videoActivity">Video</string>
     <string name="sonidoActivity">Sonido</string>
     <string name="RecyclerViewActivity">Recycler</string>
+    <string name="SignIn">Sign In</string>
+    <string name="Usuario">Usuario</string>
+    <string name="Password">Password</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="Advertisement">By Signing in into My Team you agree to our User Agreement</string>
+    <string name="title_activity_landing_page">LandingPage</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_mi_vista">MiVistaActivity</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_bottom_tabs">BottomTabs</string>
+    <string name="asignar">Asignar</string>
+    <string name="mi_vista">Mi Vista</string>
+    <string name="formularios">Formularios</string>
+    <string name="MiVista">Mi Vista</string>
+    <string name="Register">Register</string>
+    <string name="MyCheck">My Check</string>
+    <string name="MisTareas">Caminatas</string>
+    <string name="MyProfile">My Profile</string>
+    <string name="Logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

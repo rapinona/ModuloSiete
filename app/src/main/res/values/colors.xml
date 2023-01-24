@@ -7,8 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="fondo_color">#E92DBAFA</color>
-    <color name="menu_color">#D88FC8E3</color>
+    <color name="BackgroundBlack">#1D1D20</color>
+    <color name="textBlack">#FFFFFFFF</color>
+    <color name="Buttons">#74F270</color>
+    <color name="Black">#000000</color>
+    <color name="Gray">#808080</color>
+    <color name="Red">#FF5733</color>
+    <color name="Orange">#F4A020</color>
 
     <integer-array name="inicio_colores">
         <item>@color/purple_200</item>

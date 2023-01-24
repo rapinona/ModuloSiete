@@ -15,10 +15,10 @@
             android:id="@+id/toolbar_main"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/fondo_color"
+            android:background="@color/BackgroundBlack"
             android:elevation="0dp"
             app:layout_scrollFlags="scroll|enterAlways"
-            app:title="@string/titulo_barra"
+            app:title="@string/MisTareas"
             app:titleTextColor="@color/white" />
     </com.google.android.material.appbar.AppBarLayout>
 
