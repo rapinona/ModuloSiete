@@ -59,33 +59,16 @@
             android:id="@+id/delete"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
             android:backgroundTint="@color/Red"
             android:textColor="@color/Black"
             app:icon="@drawable/ic_baseline_delete_24"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.555"
             app:layout_constraintStart_toEndOf="@+id/linear"
             app:layout_constraintTop_toTopOf="parent">
 
         </Button>
-
-        <Button
-            android:id="@+id/edit"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="16dp"
-            android:text="Button"
-            style="?android:attr/borderlessButtonStyle"
-            android:textColor="@color/Black"
-            android:backgroundTint="@color/Gray"
-            app:elevation="0dp"
-            app:icon="@drawable/ic_baseline_edit_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/linear" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

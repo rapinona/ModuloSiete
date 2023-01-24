@@ -5,20 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
-import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import dgtic.unam.modulosiete.BD.AppDatabase
 import dgtic.unam.modulosiete.BD.Recorrido
 import dgtic.unam.modulosiete.Dialog.MyDialog
-import dgtic.unam.modulosiete.Dialog.MyDialogEdit
-import dgtic.unam.modulosiete.Fragments.MisCaminatasFragment
 import dgtic.unam.modulosiete.R
 
 @Suppress("DEPRECATION")
@@ -39,13 +32,11 @@ class AdapterViewHolder(private val context: Context, private val status:Int, pr
         var fechaIncio:TextView
         var fechaFin:TextView
         var delete : Button
-        var edit : Button
         init {
             name=view.findViewById(R.id.nombre_recorrido)
             fechaIncio=view.findViewById(R.id.fecha_inicio_recorrido)
             fechaFin=view.findViewById(R.id.fecha_fin_recorrido)
             delete = view.findViewById(R.id.delete)
-            edit = view.findViewById(R.id.edit)
         }
     }
 
@@ -66,11 +57,6 @@ class AdapterViewHolder(private val context: Context, private val status:Int, pr
             val dialog = MyDialog("Eliminar","¿Estas seguro de eliminar el recorrido?.",context,data[position].id,position)
             dialog.setTargetFragment(fragment, REQUEST_CODE)
             dialog.show(fragment.parentFragmentManager,"MyDialog")
-        }
-
-        holder.edit.setOnClickListener{
-            val dialog = MyDialogEdit("Estatus","Selecciona el nuevo estatus.",context,data[position].id,position)
-            dialog.show(fragment.childFragmentManager,"MyDialog")
         }
     }
     override fun getItemCount(): Int {
