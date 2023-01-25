@@ -19,6 +19,8 @@ import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import dgtic.unam.modulosiete.Fragments.*
+import dgtic.unam.modulosiete.Views.FormularioActivity
+import dgtic.unam.modulosiete.Views.LoginActivity
 
 enum class ProviderType {
     BASIC,
@@ -106,8 +108,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.myProfile->{
-                true
+            R.id.logout->{
+                val newFormIntent = Intent(this, LoginActivity::class.java).apply {
+
+                }
+                newFormIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+                startActivity(newFormIntent)
             }
         }
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_layout"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="80dp"
     android:layout_margin="13dp"
     android:clickable="true"
     android:focusable="true"
@@ -30,35 +30,17 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/nombre_recorrido"
+                android:id="@+id/nombre_formulario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:height="40dp"
                 android:textColor="@color/Black" />
 
-            <TextView
-                android:id="@+id/fecha_inicio_recorrido"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:height="40dp"
-                android:textColor="@color/Black" />
-
-            <TextView
-                android:id="@+id/fecha_fin_recorrido"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
-                android:height="40dp"
-                android:textColor="@color/Black" />
-
         </LinearLayout>
 
         <Button
-            android:id="@+id/delete"
+            android:id="@+id/delete_formulario"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="16dp"
@@ -67,7 +49,8 @@
             app:icon="@drawable/ic_baseline_delete_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466">
 
         </Button>
 

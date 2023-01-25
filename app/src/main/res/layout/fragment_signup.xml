@@ -64,6 +64,7 @@
         android:fontFamily="@font/be_vietnam_light"
         android:text="@string/SignIn"
         android:onClick="click"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/Advertisement"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

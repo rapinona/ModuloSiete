@@ -1,60 +1,89 @@
 package dgtic.unam.modulosiete.Fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import com.google.android.material.tabs.TabLayout
+import dgtic.unam.modulosiete.BD.AppDatabase
+import dgtic.unam.modulosiete.BD.Formulario
+import dgtic.unam.modulosiete.BD.Recorrido
+import dgtic.unam.modulosiete.Holder.AdapterFormularios
+import dgtic.unam.modulosiete.Holder.AdapterViewHolder
+import dgtic.unam.modulosiete.MainActivity
 import dgtic.unam.modulosiete.R
+import dgtic.unam.modulosiete.Views.FormularioActivity
+import dgtic.unam.modulosiete.databinding.FragmentFormulariosBinding
+import dgtic.unam.modulosiete.databinding.FragmentMisCaminatasBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class FormulariosFragment : Fragment(R.layout.fragment_formularios) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FormulariosFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FormulariosFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentFormulariosBinding? = null
+    private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var recyclerView: RecyclerView
+    private var adapter: AdapterFormularios?=null
+    private var listaFormularios=ArrayList<Formulario>()
+    private val REQUEST_CODE = 1
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_formularios, container, false)
+        _binding = FragmentFormulariosBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment FormulariosFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            FormulariosFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    override fun onStart() {
+        super.onStart()
+        renderFormularios()
+
+        val floating = binding.addFormulario
+        floating.setOnClickListener {
+            val newFormIntent = Intent(requireContext(), FormularioActivity::class.java).apply {
+                putExtra("id_formulario", "")
             }
+            newFormIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(newFormIntent)
+        }
+    }
+
+
+    fun renderFormularios(){
+
+        adapter = AdapterFormularios(requireActivity(),this)
+        val recyclerView = view?.findViewById<RecyclerView>(R.id.recycler_view)
+        if (recyclerView != null) {
+            recyclerView.layoutManager = LinearLayoutManager(context)
+        }
+        if (recyclerView != null) {
+            recyclerView.adapter = adapter
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        val delete = data?.extras?.getInt("delete")
+        val id = data?.extras?.getString("id")
+        val position = data?.extras?.getInt("position")
+
+        if(delete == 1){
+            val db = Room.databaseBuilder(
+                requireActivity(),
+                AppDatabase::class.java,
+                "formularios"
+            ).allowMainThreadQueries().build()
+
+            val formulario_delete = db.formularioDao().getById(id)
+            db.formularioDao().delete(formulario_delete)
+            if (position != null) {
+                adapter?.notifyItemRemoved(position)
+            }
+        }
     }
 }

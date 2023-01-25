@@ -5,9 +5,6 @@
         android:id="@+id/group1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/myProfile"
-            android:title="@string/MyProfile" />
-        <item
             android:id="@+id/logout"
             android:title="@string/Logout" />
     </group>

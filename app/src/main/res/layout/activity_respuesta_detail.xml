@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundBlack"
+    tools:context=".Views.RespuestaDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/BackgroundBlack">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/Theme.Modulo7.AppBarOverlay">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    app:title="Respuesta Detalle"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary"
+                    app:popupTheme="@style/Theme.Modulo7.PopupOverlay" >
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/BackgroundBlack">
+
+                <TextView
+                    android:id="@+id/nombre_camimnata"
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="24sp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="16dp"
+                    android:ems="10"
+                    android:hint="Pregunta"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categoria_lbl"
+                    android:layout_width="100dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="96dp"
+                    android:hint="Categoria: "
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.088"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categoria"
+                    android:layout_width="wrap_content"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="96dp"
+                    android:hint="Categoria "
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/categoria_lbl"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/onservaciones_lbl"
+                    android:layout_width="100dp"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="176dp"
+                    android:hint="Observaciones: "
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.084"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/observaciones"
+                    android:layout_width="wrap_content"
+                    android:maxWidth="200dp"
+                    android:minWidth="200dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="24dp"
+                    android:hint="Observaciones "
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/onservaciones_lbl"
+                    app:layout_constraintTop_toBottomOf="@+id/categoria" />
+
+                <Switch
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/cumple"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="84dp"
+                    android:text="Cumple"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/observaciones" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
