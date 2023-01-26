@@ -49,16 +49,7 @@ class AdapterPreguntas(private val context: Context,private val id_formulario : 
         holder.name.text=info.pregunta
         holder.delete.setOnClickListener{
             val otherActivity = FormularioActivity()
-            otherActivity.showDialogDelete(context,data[position].id,id_formulario,position,this)
-        }
-
-        holder.itemView.setOnClickListener{
-            val id = data[position].id.toString()
-            val newFormIntent = Intent(context, FormularioActivity::class.java).apply {
-                putExtra("id_formulario", id)
-            }
-            newFormIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
-            context.startActivity(newFormIntent)
+            otherActivity.showDialogDelete(context,data[holder.adapterPosition].id,id_formulario,holder.adapterPosition,this)
         }
     }
     override fun getItemCount(): Int {

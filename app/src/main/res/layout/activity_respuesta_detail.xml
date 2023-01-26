@@ -116,6 +116,16 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/observaciones" />
 
+                <Spinner
+                    android:id="@+id/status"
+                    android:layout_width="200sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="36dp"
+                    android:background="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cumple" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>

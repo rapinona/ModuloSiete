@@ -2,10 +2,17 @@ package dgtic.unam.modulosiete.Views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.annotation.NonNull
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.room.Room
+import dgtic.unam.modulosiete.BD.AppDatabase
+import dgtic.unam.modulosiete.BD.Recorrido
 import dgtic.unam.modulosiete.R
 import dgtic.unam.modulosiete.WEB.Empleado.AdapterEmpleado
 import dgtic.unam.modulosiete.WEB.Empleado.Empleado
@@ -16,6 +23,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.text.FieldPosition
 import java.util.*
 
 class RecorridoDesActivity : AppCompatActivity() {
@@ -26,6 +34,7 @@ class RecorridoDesActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private var adapter: AdapterEmpleado?=null
     private var listaEmpleados=ArrayList<Empleado>()
+    var statusLoaded = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,19 +44,61 @@ class RecorridoDesActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
-        val nombre = intent.getStringExtra("nombre")
-        val fecha_inicio = intent.getStringExtra("fecha_inicio")
-        val fecha_fin = intent.getStringExtra("fecha_fin")
-
         val nombreRecorrido = binding.nombreCamimnata
         val fechaInicio = binding.fechaInicioLbl
         val fechaFin = binding.fechaFinLbl
+
+        val nombre = intent.getStringExtra("nombre")
+        val fecha_inicio = intent.getStringExtra("fecha_inicio")
+        val fecha_fin = intent.getStringExtra("fecha_fin")
 
         nombreRecorrido.text = nombre
         fechaInicio.text = "Fecha Inicio : " + fecha_inicio
         fechaFin.text = "Fecha Fin : " + fecha_fin
 
+        var array = arrayOf<String>("Creada","En Curso","Completada")
+
+        val adapter = ArrayAdapter(this, R.layout.spinner_item , array)
+        val spinnerStatus = binding.status
+        spinnerStatus.adapter = adapter
+        spinnerStatus.setSelection(intent.getIntExtra("status",0))
+
+        spinnerStatus.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long,) {
+                if(statusLoaded){
+                    DBUpdate(position)
+                }else{
+                    statusLoaded = true
+                }
+            }
+            override fun onNothingSelected(parent: AdapterView<*>) {
+
+            }
+        }
+
         search()
+    }
+
+    fun DBUpdate(position: Int){
+        val db = Room.databaseBuilder(
+            this,
+            AppDatabase::class.java,
+            "recorridos"
+        ).allowMainThreadQueries().build()
+
+        var id = intent.getStringExtra("id")
+        val nombre = intent.getStringExtra("nombre")
+        val fecha_inicio = intent.getStringExtra("fecha_inicio")
+        val fecha_fin = intent.getStringExtra("fecha_fin")
+
+        val recorrido = Recorrido(
+            id!!,
+            nombre,
+            position,
+            fecha_fin,
+            fecha_fin)
+        db.recorridoDao().update(recorrido)
+        Toast.makeText(this,"Actualizado con exito",Toast.LENGTH_SHORT).show()
     }
 
     private fun initReclyView() {

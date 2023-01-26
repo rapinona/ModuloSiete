@@ -57,23 +57,30 @@ class AdapterViewHolder(private val context: Context, private val status:Int, pr
         holder.fechaIncio.text= "Fecha Inicio : " + info.fechaInicio
         holder.fechaFin.text="Fecha Fin : "+info.fechaFin
         holder.delete.setOnClickListener{
-            val dialog = MyDialog("Eliminar","¿Estas seguro de eliminar el recorrido?.",context,data[position].id,position)
-            dialog.setTargetFragment(fragment, REQUEST_CODE)
-            dialog.show(fragment.parentFragmentManager,"MyDialog")
+            if(data.size > 0){
+                val dialog = MyDialog("Eliminar","¿Estas seguro de eliminar el recorrido?.",context,data[holder.adapterPosition].id,holder.adapterPosition)
+                dialog.setTargetFragment(fragment, REQUEST_CODE)
+                dialog.show(fragment.parentFragmentManager,"MyDialog")
+            }
         }
         holder.itemView.setOnClickListener{
             val recorrido = data[position].name
             val fecha_inicio = data[position].fechaInicio
             val fecha_fin = data[position].fechaFin
+            val id = data[position].id
+            val status = data[position].status
             val newFormIntent = Intent(context, RecorridoDesActivity::class.java).apply {
+                putExtra("id", id)
                 putExtra("nombre", recorrido)
                 putExtra("fecha_inicio", fecha_inicio)
                 putExtra("fecha_fin", fecha_fin)
+                putExtra("status", status)
             }
             newFormIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             context.startActivity(newFormIntent)
         }
     }
+
     override fun getItemCount(): Int {
         data = db.recorridoDao().getAll() as ArrayList<Recorrido>
         data = data.filter { it.status == status } as ArrayList<Recorrido>

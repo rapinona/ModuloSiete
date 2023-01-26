@@ -5,7 +5,9 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
 import android.text.InputType
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -35,6 +37,9 @@ public class FormularioActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private var adapter: AdapterPreguntas?=null
     private var listaPreguntas=ArrayList<Pregunta>()
+    lateinit var addPregunta : com.google.android.material.floatingactionbutton.FloatingActionButton
+    lateinit var nombreFormulario : EditText
+    lateinit var saveButton : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +48,12 @@ public class FormularioActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        val addPregunta = binding.addPregunta
+        addPregunta = binding.addPregunta
 
         id_formulario = id_recorrido
         renderPreguntas()
 
-        val nombreFormulario = binding.nombreFormulario
+        nombreFormulario = binding.nombreFormulario
 
 
         addPregunta.setOnClickListener{
@@ -88,7 +93,7 @@ public class FormularioActivity : AppCompatActivity() {
             builder.show()
         }
 
-        val saveButton = findViewById<Button>(R.id.save_button)
+        saveButton = binding.saveButton
         saveButton.setOnClickListener{
             val db = Room.databaseBuilder(
                 this,
@@ -110,9 +115,18 @@ public class FormularioActivity : AppCompatActivity() {
     }
 
     fun renderPreguntas(){
-        val intent = intent.getStringExtra("id_formulario").toString()
-        if(intent != ""){
-            id_formulario = intent
+        val id = intent.getStringExtra("id_formulario")
+        val name = intent.getStringExtra("formulario")
+        if(id != ""){
+            if (id != null) {
+                id_formulario = id
+            }
+            addPregunta.hide()
+            saveButton = binding.saveButton
+            saveButton.visibility = View.GONE
+            nombreFormulario = binding.nombreFormulario
+            nombreFormulario.setText(name)
+            nombreFormulario.isEnabled = false
         }else{
             id_formulario = id_recorrido
         }

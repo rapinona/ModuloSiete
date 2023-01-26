@@ -53,14 +53,16 @@ class AdapterFormularios(private val context: Context, private val fragment: Fra
         val info=data[position]
         holder.name.text=info.formulario
         holder.delete.setOnClickListener{
-            val dialog = MyDialog("Eliminar","¿Estas seguro de eliminar el recorrido?.",context,data[position].id,position)
+            val dialog = MyDialog("Eliminar","¿Estas seguro de eliminar el recorrido?.",context,data[holder.adapterPosition].id,holder.adapterPosition)
             dialog.setTargetFragment(fragment, REQUEST_CODE)
             dialog.show(fragment.parentFragmentManager,"MyDialog")
         }
         holder.itemView.setOnClickListener{
             val id = data[position].id.toString()
+            val formulario = data[position].formulario.toString()
             val newFormIntent = Intent(context, FormularioActivity::class.java).apply {
                 putExtra("id_formulario", id)
+                putExtra("formulario", formulario)
             }
             newFormIntent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             context.startActivity(newFormIntent)

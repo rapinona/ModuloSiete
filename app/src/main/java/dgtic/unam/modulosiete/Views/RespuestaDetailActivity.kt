@@ -2,6 +2,7 @@ package dgtic.unam.modulosiete.Views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -38,6 +39,7 @@ class RespuestaDetailActivity : AppCompatActivity() {
         val pregunta = intent.getStringExtra("pregunta")
         val categoria = intent.getStringExtra("categoria")
         val observaciones = intent.getStringExtra("observaciones")
+        val id = intent.getStringExtra("id")
         val cumple = intent.getBooleanExtra("cumple",false)
 
         val pregunta_respuesta = binding.nombreCamimnata
@@ -49,5 +51,11 @@ class RespuestaDetailActivity : AppCompatActivity() {
         categoria_respuesta.text = categoria
         observaciones_respuesta.text = observaciones
         cumple_respuesta.isChecked = cumple
+
+        var array = arrayOf<String>("Creada","En Curso","Completada")
+
+        val adapter = ArrayAdapter(this, R.layout.spinner_item , array)
+        val spinnerStatus = binding.status
+        spinnerStatus.adapter = adapter
     }
 }

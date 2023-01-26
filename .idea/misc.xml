@@ -26,7 +26,7 @@
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/ctr_bg.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/empleado_lista.xml" value="0.17864583333333334" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/formulario_lista.xml" value="0.4466666666666667" />
-        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/fragment_agregar_caminata.xml" value="0.1796875" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/fragment_agregar_caminata.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/fragment_formularios.xml" value="0.1796875" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/fragment_login.xml" value="0.146875" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/fragment_mis_caminatas.xml" value="0.1796875" />
@@ -40,6 +40,7 @@
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/recorrido_lista.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/redonda.xml" value="0.23333333333333334" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/respuestas_lista.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/layout/spinner_item.xml" value="0.1" />
         <entry key="..\:/Users/RAPINONA/Desktop/Diplomado/Android/ModuloSiete/app/src/main/res/menu/activity_main_menu.xml" value="0.1" />
       </map>
     </option>

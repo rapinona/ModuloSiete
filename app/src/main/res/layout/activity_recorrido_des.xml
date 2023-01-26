@@ -34,7 +34,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="335dp"
                 android:background="@color/BackgroundBlack">
 
                 <TextView
@@ -76,6 +76,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <Spinner
+                    android:id="@+id/status"
+                    android:layout_width="200sp"
+                    android:layout_height="50sp"
+                    android:layout_marginTop="24dp"
+                    android:background="@color/Gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.497"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fecha_Fin_lbl" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

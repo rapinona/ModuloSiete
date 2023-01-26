@@ -73,6 +73,9 @@ class FormulariosFragment : Fragment(R.layout.fragment_formularios) {
         val position = data?.extras?.getInt("position")
 
         if(delete == 1){
+            if (position != null) {
+                adapter?.notifyItemRemoved(position)
+            }
             val db = Room.databaseBuilder(
                 requireActivity(),
                 AppDatabase::class.java,
@@ -81,9 +84,6 @@ class FormulariosFragment : Fragment(R.layout.fragment_formularios) {
 
             val formulario_delete = db.formularioDao().getById(id)
             db.formularioDao().delete(formulario_delete)
-            if (position != null) {
-                adapter?.notifyItemRemoved(position)
-            }
         }
     }
 }
